@@ -7,7 +7,14 @@ import dotenv from 'dotenv';
 
 import connectDB from './src/config/db.js';
 import { verifyTransporter } from './src/utils/emailService.js';
+const distPath = path.join(__dirname, "dist");
 
+app.use(express.static(distPath)); // serve /assets/* correctly first
+
+// only after static middleware:
+app.get("*", (req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
 // Fix __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
