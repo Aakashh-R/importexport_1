@@ -5,7 +5,7 @@ import { apiGet, apiPost } from '../api.js'; // adjust path as needed
 export const AuthContext = createContext();
 
 export const DEFAULT_SENDGRID_FROM =
-  import.meta.env.VITE_SENDGRID_FROM || 'Docs System <fromexpo@gmail.com>';
+  import.meta.env.VITE_SENDGRID_FROM || "Docs System <fromexpo@gmail.com>";
 
 function parseJwt(token) {
   try {

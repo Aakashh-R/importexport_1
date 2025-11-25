@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: process.env.VITE_BASE_URL || "/importexport_1",
+  base: process.env.VITE_API_BASE_URL || "/importexport_1",
   server: {
     port: 5173,
     host: "localhost",
